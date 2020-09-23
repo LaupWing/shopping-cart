@@ -40,7 +40,7 @@ const actions ={
 		})
 	}
 }
-console.log(state)
+
 const getters = {
 	shoppingcart: state => state.shoppingcart,
 	email: state => state.email,

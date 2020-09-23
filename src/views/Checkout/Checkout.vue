@@ -14,9 +14,18 @@
 		</ul>
 		<router-view></router-view>
 		<div class="buttons">
-			<global-button v-if="links[0].name !== $route.name" @click.native="$router.go(-1)" text="back"/>
-			<router-link :to="{name:nextLink}">
-				<global-button :text="nextLink"/>
+			<global-button 
+				v-if="links[0].name !== $route.name" 
+				@click.native="$router.push({name:goTo(false)})" 
+				text="back"
+			/>
+			<router-link 
+				v-if="goTo(true)" 
+				:to="{name:goTo(true)}"
+			>
+				<global-button 
+					:text="goTo(true)"
+				/>
 			</router-link>
 		</div>
 	</div>
@@ -36,16 +45,19 @@ export default {
 				.options
 				.routes[0]
 				.children
-		},
-		nextLink(){
+		}
+	},
+	methods:{
+		goTo(forward){
 			const allRoutes = this.$router
 				.options
 				.routes[0]
 				.children
 				.map(x=>x.name)
 			const index = allRoutes.indexOf(this.$route.name)
-			return allRoutes[index+1]
+			return allRoutes[forward ? index+1 : index-1]
 		}
+
 	}
 }
 </script>
