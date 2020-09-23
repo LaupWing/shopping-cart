@@ -52,6 +52,16 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+ul{
+	margin: 20px 0;
+}
+ul a{
+	padding: 10px;
+	border: solid 1px var(--border-color);
+	position: relative;
+}
+ul a.router-link-exact-active{
+	background: var(--highlight-color);
+}
 </style>

@@ -16,16 +16,13 @@ export default {
 		return{
 			fields:[
 				{
-					value: '',
-					label: 'Voornaam'
+					label: 'voornaam'
 				},
 				{
-					value: '',
-					label: 'Achternaam'
+					label: 'achternaam'
 				},
 				{
-					value: '',
-					label: 'Email',
+					label: 'email',
 					type: 'email'
 				},
 			]

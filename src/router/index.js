@@ -16,17 +16,28 @@ const routes = [
 			{
 				path: "/",
 				component: Products,
-				name: "Products"
+				name: "Products",
+				checks:[]
 			},
 			{
 				path: "/shipping",
 				component: Shipping,
-				name: "Shipping"
+				name: "Shipping",
+				checks:[
+					'voornaam', 
+					'achternaam', 
+					'postcode', 
+					'huisnummer', 
+					'woonplaats'
+				]
 			},
 			{
 				path: "/payment",
 				component: Payment,
-				name: "Payment"
+				name: "Payment",
+				checks:[
+					'cardnumber'
+				]
 			},
 			{
 				path: "/delivery",

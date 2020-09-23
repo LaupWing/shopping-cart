@@ -1,7 +1,10 @@
 import faker from 'faker'
 
 const state = {
-	shoppingcart:[]
+	shoppingcart:[],
+	email: '',
+	voornaam: '',
+	achternaam: ''
 }
 const mutations = {
 	'SET_ITEM'(state, {type, value}){
@@ -35,7 +38,10 @@ const actions ={
 	}
 }
 const getters = {
-	shoppingcart: state => state.shoppingcart
+	shoppingcart: state => state.shoppingcart,
+	email: state => state.email,
+	voornaam: state => state.voornaam,
+	achternaam: state => state.achternaam,
 }
 export default {
     state,

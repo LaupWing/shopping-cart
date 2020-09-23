@@ -1,6 +1,6 @@
 <template>
 	<div 
-		:class="`field ${focus ? 'focus': ''}`"
+		:class="`field ${focus || inputProxy.length> 0 ? 'focus': ''}`"
 	>
 		<label>{{label}}</label>
 		<input 
@@ -31,7 +31,7 @@ export default {
 	computed:{
 		inputProxy:{
 			get(){
-				return this.value ? this.value : this.$store.getters[label]
+				return this.value ? this.value : this.$store.getters[this.label]
 			},
 			set(value){
 				return this.value ? this.$emit('update:value', value) : this.$store.commit(`SET_${value.toUpperCase()}`, value)
@@ -64,6 +64,9 @@ label{
 	pointer-events: none;
 	transition: .25s;
 	background: var(--background-color);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: .8rem;
 }
 .focus label{
 	font-size: .8rem;
