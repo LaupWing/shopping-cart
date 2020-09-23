@@ -1,6 +1,7 @@
 <template>
 	<div class="checkout">
-		<router-view/>
+		<h2>Checkout</h2>
+		<router-view></router-view>
 	</div>
 </template>
 
@@ -16,6 +17,9 @@ export default {
 		return{
 
 		}
+	},
+	created(){
+		console.log('Checkout page')
 	}
 }
 </script>

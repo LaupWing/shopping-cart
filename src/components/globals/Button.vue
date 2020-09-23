@@ -16,6 +16,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+button{
+	width: 100%;
+	padding: 10px;
+	text-transform: uppercase;
+	font-size: 1rem;
+	letter-spacing: 1px;
+}
 </style>
