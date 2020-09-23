@@ -4,7 +4,10 @@ const state = {
 	shoppingcart:[],
 	email: '',
 	voornaam: '',
-	achternaam: ''
+	achternaam: '',
+	woonplaats: '',
+	straat: '',
+	huisnummer: ''
 }
 const mutations = {
 	'SET_ITEM'(state, {type, value}){
@@ -37,11 +40,15 @@ const actions ={
 		})
 	}
 }
+console.log(state)
 const getters = {
 	shoppingcart: state => state.shoppingcart,
 	email: state => state.email,
 	voornaam: state => state.voornaam,
 	achternaam: state => state.achternaam,
+	straat: state => state.straat,
+	huisnummer: state => state.huisnummer,
+	woonplaats: state => state.woonplaats,
 }
 export default {
     state,

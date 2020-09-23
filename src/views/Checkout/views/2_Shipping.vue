@@ -25,6 +25,15 @@ export default {
 					label: 'email',
 					type: 'email'
 				},
+				{
+					label: 'woonplaats'
+				},
+				{
+					label: 'straat'
+				},
+				{
+					label: 'huisnummer'
+				},
 			]
 		}
 	}

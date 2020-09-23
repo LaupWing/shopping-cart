@@ -24,8 +24,7 @@ export default {
 			required: true
 		},
 		value:{
-			type: String,
-			required: true
+			type: String
 		}
 	},
 	computed:{
@@ -42,6 +41,9 @@ export default {
 		return{
 			focus: false
 		}
+	},
+	created(){
+		console.log(this.label)
 	}
 }
 </script>
@@ -51,7 +53,7 @@ export default {
 	display: flex;
 	align-items: center;
 	position: relative;
-	margin: 10px 0;
+	margin: 20px 0;
 	min-width: 300px;
 }
 .focus{
