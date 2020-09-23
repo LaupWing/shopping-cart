@@ -5,6 +5,9 @@
 			:key="product.name"
 			:product="product"
 		/>
+		<p class="total_price">
+			Total: {{calcTotalPrice}}
+		</p>
 	</div>
 </template>
 
@@ -19,11 +22,20 @@ export default {
 	computed:{
 		shoppincart(){
 			return this.$store.getters.shoppingcart
+		},
+		calcTotalPrice(){
+			return this.$store.getters.shoppingcart
+				.reduce((acc, curr)=>{
+					return acc + Number(curr.price)
+				},0)
 		}
 	}
 }
 </script>
 
-<style>
-
+<style scoped>
+.total_price{
+	text-align: right;
+	font-size: 2rem;
+}
 </style>

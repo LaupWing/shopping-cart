@@ -16,6 +16,7 @@ export default {
 <style>
 :root{
 	--highlight-color: orange;
+	--border-color: #d6d6d6;
 }
 *{
 	margin: 0;
