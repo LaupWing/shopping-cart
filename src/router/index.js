@@ -1,13 +1,44 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Checkout from '@/views/Checkout/Checkout';
+import Products from '@/views/Checkout/views/1_Products';
+import Shipping from '@/views/Checkout/views/2_Shipping';
+import Payment from '@/views/Checkout/views/3_Payment';
+import Delivery from '@/views/Checkout/views/4_Delivery';
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
-		path: "/",
-		name: "Home",
-		component: Home,
+		path: "/checkout",
+		component: Checkout,
+		children:[
+			{
+				path: "/",
+				component: Products,
+				name: "Products"
+			},
+			{
+				path: "/shipping",
+				component: Shipping,
+				name: "Shipping"
+			},
+			{
+				path: "/shipping",
+				component: Shipping,
+				name: "Shipping"
+			},
+			{
+				path: "/payment",
+				component: Payment,
+				name: "Payment"
+			},
+			{
+				path: "/delivery",
+				component: Delivery,
+				name: "Delivery"
+			},
+		]
 	}
 ];
 

@@ -7,5 +7,4 @@
 :root{
 	--highlight-color: orange;
 }
-
 </style>
