@@ -13,14 +13,12 @@
 			</router-link>
 		</ul>
 		<router-view></router-view>
-		<router-link :to="{name:nextLink}">
-			<global-button 
-				:text="nextLink" 
-				:extraStyling="{
-					marginLeft: 'auto'
-				}"
-			/>
-		</router-link>
+		<div class="buttons">
+			<global-button v-if="links[0].name !== $route.name" @click.native="$router.go(-1)" text="back"/>
+			<router-link :to="{name:nextLink}">
+				<global-button :text="nextLink"/>
+			</router-link>
+		</div>
 	</div>
 </template>
 
@@ -63,5 +61,12 @@ ul a{
 }
 ul a.router-link-exact-active{
 	background: var(--highlight-color);
+}
+.buttons{
+	display: flex;
+	justify-self: flex-end;
+}
+.buttons a{
+	width: 100%;
 }
 </style>

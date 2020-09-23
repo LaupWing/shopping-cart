@@ -41,9 +41,6 @@ export default {
 		return{
 			focus: false
 		}
-	},
-	created(){
-		console.log(this.label)
 	}
 }
 </script>
