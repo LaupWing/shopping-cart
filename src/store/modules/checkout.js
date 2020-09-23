@@ -25,6 +25,7 @@ const actions ={
 					image,
 				}
 			})
+		console.log(products)
 		commit('SET_ITEM', {
 			type: 'shoppingcart',
 			value: products

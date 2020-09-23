@@ -1,6 +1,10 @@
 <template>
 	<div class="products">
-		
+		<app-product
+			v-for="product in shoppincart"
+			:key="product.name"
+			:product="product"
+		/>
 	</div>
 </template>
 
@@ -14,7 +18,7 @@ export default {
 	},
 	computed:{
 		shoppincart(){
-			return this.$store.getters.shoppincart
+			return this.$store.getters.shoppingcart
 		}
 	}
 }

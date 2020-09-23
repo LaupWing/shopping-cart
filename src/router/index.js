@@ -24,11 +24,6 @@ const routes = [
 				name: "Shipping"
 			},
 			{
-				path: "/shipping",
-				component: Shipping,
-				name: "Shipping"
-			},
-			{
 				path: "/payment",
 				component: Payment,
 				name: "Payment"
