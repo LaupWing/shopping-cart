@@ -1,5 +1,7 @@
 <template>
-	<button>
+	<button :style="{
+		...extraStyling
+	}">
 		{{text}}
 	</button>
 </template>
@@ -11,6 +13,9 @@ export default {
 		text:{
 			type: String,
 			required: true
+		},
+		extraStyling:{
+			type: Object
 		}
 	}
 }
@@ -23,5 +28,11 @@ button{
 	text-transform: uppercase;
 	font-size: 1rem;
 	letter-spacing: 1px;
+	max-width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+	cursor: pointer;
 }
 </style>

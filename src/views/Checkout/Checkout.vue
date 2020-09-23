@@ -13,6 +13,9 @@
 			</router-link>
 		</ul>
 		<router-view></router-view>
+		<global-button text="Shipping" :extraStyling="{
+			marginLeft: 'auto'
+		}"/>
 	</div>
 </template>
 
