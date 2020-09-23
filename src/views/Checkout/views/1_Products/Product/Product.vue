@@ -8,7 +8,7 @@
 			</div>
 			<div class="price_quantity">
 				<div class="price">{{product.price}}</div>
-				<input type="number" v-model="product.quantity">
+				<input type="number" v-model.lazy="quantity">
 			</div>
 		</div>
 	</div>
@@ -17,6 +17,29 @@
 <script>
 export default {
 	name: 'Product',
+	computed:{
+		quantity:{
+			get(){
+				return this.$store.getters.shoppingcart
+					.find(item=>item === this.product)
+					.quantity
+			},
+			set(value){
+				const updatedCart = this.$store.getters.shoppingcart
+					.map(item=>{
+						if(item===this.product){
+							item.quantity = Number(value)
+						}
+						return item
+					})
+				console.log(updatedCart)
+				this.$store.commit('SET_ITEM', {
+					type: 'shoppingcart',
+					value: updatedCart
+				})
+			}
+		}
+	},
 	props:{
 		product:{
 			required: true,

@@ -26,7 +26,7 @@ export default {
 		calcTotalPrice(){
 			return this.$store.getters.shoppingcart
 				.reduce((acc, curr)=>{
-					return acc + Number(curr.price)
+					return acc + (Number(curr.price)*curr.quantity)
 				},0)
 		}
 	}
