@@ -1,9 +1,13 @@
 <template>
 	<div 
-		:class="`field ${focus}`"
+		:class="`field ${focus ? 'focus': ''}`"
 	>
 		<label>{{label}}</label>
-		<input @focus="focus=true" :type="inputType">
+		<input 
+			@focus="focus=true" 
+			@blur="focus=false" 
+			:type="inputType"
+		/>
 	</div>
 </template>
 
@@ -20,7 +24,8 @@ export default {
 			required: true
 		},
 		value:{
-			type: String
+			type: String,
+			required: true
 		}
 	},
 	computed:{
@@ -45,18 +50,29 @@ export default {
 .field{
 	display: flex;
 	align-items: center;
+	position: relative;
+	margin: 10px 0;
+	min-width: 300px;
 }
 .focus{
 	border-color: var(--highlight-color);
 }
 label{
 	position: absolute;
-	left: 0;
+	left: 10px;
+	user-select: none;
+	pointer-events: none;
+	transition: .25s;
+	background: var(--background-color);
 }
 .focus label{
 	font-size: .8rem;
 	top: 0;
-	left: 0;
+	left: 10px;
 	transform: translateY(-50%);
+}
+input{
+	width: 100%;
+	padding: 5px;
 }
 </style>
