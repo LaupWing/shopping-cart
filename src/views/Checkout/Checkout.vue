@@ -13,9 +13,14 @@
 			</router-link>
 		</ul>
 		<router-view></router-view>
-		<global-button text="Shipping" :extraStyling="{
-			marginLeft: 'auto'
-		}"/>
+		<router-link :to="{name:nextLink}">
+			<global-button 
+				:text="nextLink" 
+				:extraStyling="{
+					marginLeft: 'auto'
+				}"
+			/>
+		</router-link>
 	</div>
 </template>
 
@@ -33,15 +38,16 @@ export default {
 				.options
 				.routes[0]
 				.children
+		},
+		nextLink(){
+			const allRoutes = this.$router
+				.options
+				.routes[0]
+				.children
+				.map(x=>x.name)
+			const index = allRoutes.indexOf(this.$route.name)
+			return allRoutes[index+1]
 		}
-	},
-	data(){
-		return{
-
-		}
-	},
-	created(){
-		console.log(this.links)
 	}
 }
 </script>

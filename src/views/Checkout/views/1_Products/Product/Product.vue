@@ -32,7 +32,6 @@ export default {
 						}
 						return item
 					})
-				console.log(updatedCart)
 				this.$store.commit('SET_ITEM', {
 					type: 'shoppingcart',
 					value: updatedCart
